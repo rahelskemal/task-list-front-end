@@ -25,12 +25,13 @@ const App = () => {
       if (task.id === updatedTask.id){ 
         task = updatedTask;
         console.log(task.isComplete)
+      }
       return task;
       }
-    console.log(newTasks)
-    // setTask(newTasks);
-    }
     );
+    console.log(newTasks);
+    setTask(newTasks);
+
   };
   return (
     <div className="App">
