@@ -2,21 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Task from './Task';
 import './TaskList.css';
+// const studentComponents = props.students.map((student, index) => {
 
-const TaskList = ({ tasks }) => {
-  const getTaskListJSX = (tasks) => {
-    return tasks.map((task) => {
+const TaskList = (props) => {
+  const getTaskListJSX = (props) => {
+    return props.tasks.map((task) => {
       return (
         <Task
           key={task.id}
           id={task.id}
           title={task.title}
           isComplete={task.isComplete}
+          updateTask={props.updateTask}
+          deleteTask = {props.deleteTask} 
         />
       );
     });
   };
-  return <ul className="tasks__list no-bullet">{getTaskListJSX(tasks)}</ul>;
+  return <ul className="tasks__list no-bullet">{getTaskListJSX(props)}</ul>;
+//   console.log(props)
+//   return <h1>task_list</h1>
 };
 
 TaskList.propTypes = {
@@ -27,6 +32,8 @@ TaskList.propTypes = {
       isComplete: PropTypes.bool.isRequired,
     })
   ).isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired
 };
 
 export default TaskList;
