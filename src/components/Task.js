@@ -11,10 +11,10 @@ const Task = ({ id, title, isComplete }) => {
     <li className="tasks__item">
       <button
         className={`tasks__item__toggle ${buttonClass}`}
-        onClick={() => setComplete(!complete)}
-      >
+        onClick ={() => setComplete(!complete)}
+      > 
         {title}
-      </button>
+      </button> 
       <button className="tasks__item__remove button">x</button>
     </li>
   );
@@ -27,3 +27,5 @@ Task.propTypes = {
 };
 
 export default Task;
+
+
